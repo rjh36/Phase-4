@@ -46,6 +46,16 @@ form, .content {
     border-radius: 5px;
     border: 1px solid grey;
 }
+.btn-group button {
+    width: 20%;
+    margin-left: 80px;
+    margin-top: 50px;
+    padding: 30px;
+    color: white;
+    background: #5F9EA0;
+    border: 1px solid purple;
+    float: left;
+}
 .btn {
     padding: 10px;
     font-size: 15px;
