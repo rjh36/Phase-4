@@ -4,28 +4,35 @@
 }
 body {
     font-size: 120%;
-    background: #F8F8FF;
+    background: #9CFBD8;
 }
 
 .header {
-    width: 30%;
-    margin: 50px auto 0px;
+    width: 100%;
+    margin: 0px 0px 0px;
     color: white;
     background: #5F9EA0;
-    text-alight: center;
-    border: 1px solid #B0C4DE;
-    border-bottom: none;
+    text-align: left;
+    border: 1px solid purple;
     border-radius: 10px 10px 0px 0px;
     padding: 20px;
 }
 
 form, .content {
-    width: 30%;
-    margin: 0px auto;
+    width: 68.6%;
+    float: left;
     padding: 20px;
-    border: 1px solid #B0C4DE;
+    border: 1px solid purple;
     background: white;
     border-radius: 0px 0px 10px 10px;
+}
+
+.sidebar {
+    width: 20%;
+    padding: 20px;
+    border: 1px solid purple;
+    float:right;
+    background-color: black;
 }
 
 .input-group {
