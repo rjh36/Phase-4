@@ -19,8 +19,7 @@ body {
 }
 
 form, .content {
-    width: 68.6%;
-    float: left;
+    margin-right: 200px;
     padding: 20px;
     border: 1px solid purple;
     background: white;
@@ -28,11 +27,27 @@ form, .content {
 }
 
 .sidebar {
-    width: 20%;
-    padding: 20px;
+    height: 100%;
+    width: 200px;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    right: 0;
     border: 1px solid purple;
-    float:right;
-    background-color: black;
+    background-color: #111;
+    overflow-x: hidden;
+}
+
+.sidebar a {
+    padding: 20px;
+    color: white;
+    text-decoration: none;
+    display: block;
+}
+
+.sidebar a:hover {
+    background-color: white;
+    color: black;
 }
 
 .input-group {

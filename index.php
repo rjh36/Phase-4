@@ -42,16 +42,16 @@
         </div>
         <div class="sidebar">
             <?php if (isset($_SESSION["username"])): ?>
-                <a href="index.php?logout='l'" style="color: red;">Logout</a><br>
-                <a href="#" style="color: red;">Phishing and Social Engineering</a><br>
-                <a href="#" style="color: red;">Patches and Antivirus</a><br>
-                <a href="#" style="color: red;">Password Strength</a><br>
-                <a href="#" style="color: red;">Public Wi-Fi Security</a><br>
-                <a href="#" style="color: red;">Take Final Exam</a><br>
-                <a href="getCertificate.php" style="color: red;">Get Certificate</a>
+                <a href="index.php?logout='l'" style="color: red;">Logout</a>
+                <a href="#">Phishing and Social Engineering</a>
+                <a href="#">Patches and Antivirus</a>
+                <a href="#">Password Strength</a>
+                <a href="#">Public Wi-Fi Security</a>
+                <a href="#">Take Final Exam</a>
+                <a href="getCertificate.php">Get Certificate</a>
             <?php else: ?>
-                <a href="register.php" style="color: red;">Create Account</a><br>
-                <a href="login.php" style="color: red;">Login</a>
+                <a href="register.php">Create Account</a>
+                <a href="login.php">Login</a>
             <?php endif ?>
         </div>
     </body>
