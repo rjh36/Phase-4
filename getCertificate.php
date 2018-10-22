@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- <?php include('server.php'); ?> -->
+<?php include('server.php'); ?>
 
 <html>
     <head>
@@ -11,13 +11,17 @@
         <div class="header">
             <h2>Congratulations, how do you want your certificate?</h2>
         </div>
-        <div class="btn-group">
-            <button name="print" class="btn">Print!</button>
-            <button name="download" class="btn">Download!</button>
-            <button name="email" class="btn">Email!</button>
+        <div class="content">
+            <embed src="Templates/CertificateTemplate.pdf" width="100%" height="700px" type='application/pdf'>
         </div>
+        <div class="sidebar">
+                <a href="index.php?logout='l'">Logout</a>
+                <a href="index.php">Home</a>
+                <a href="#">Email</a>
+        </div>
+        
         <?php
-        // put your code here
+            // Code?
         ?>
     </body>
 </html>
