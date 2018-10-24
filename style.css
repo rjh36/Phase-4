@@ -50,6 +50,20 @@ form, .content {
     color: black;
 }
 
+.sidebar button {
+    width: 100%;
+    font-size: 20px;
+    padding: 20px;
+    background-color: white;
+    color: black;
+    display: block;
+}
+
+.sidebar button:hover {
+    background-color: green;
+    color: white;
+}
+
 .input-group {
     margin: 10px 0px 10px 0px;
 }

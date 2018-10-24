@@ -17,7 +17,7 @@
         <div class="sidebar">
                 <a href="index.php?logout='l'">Logout</a>
                 <a href="index.php">Home</a>
-                <a href="#">Email</a>
+                <button type="button" id="EmailButton">Email</button>
         </div>
         
         <?php
