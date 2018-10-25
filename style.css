@@ -3,29 +3,52 @@
     padding: 0px;
 }
 body {
+    font-family: "Georgia", serif;
     font-size: 120%;
-    background: #F8F8FF;
+    background: white;
 }
 
 .header {
-    width: 30%;
-    margin: 50px auto 0px;
-    color: white;
-    background: #5F9EA0;
-    text-alight: center;
-    border: 1px solid #B0C4DE;
-    border-bottom: none;
-    border-radius: 10px 10px 0px 0px;
+    width: 100%;
+    margin: 0px 0px 0px;
+    color: black;
+    background: #d8d8d8;
+    text-align: left;
+    border-bottom: 3px solid #004C97;
+    border-top: 3px solid #004C97;
     padding: 20px;
 }
 
 form, .content {
-    width: 30%;
-    margin: 0px auto;
-    padding: 20px;
-    border: 1px solid #B0C4DE;
-    background: white;
+    margin-right: 200px;
+    padding: 50px;
+    /*border: 1px solid #004C97;
+    background: white;*/
     border-radius: 0px 0px 10px 10px;
+}
+
+.sidebar {
+    height: 100%;
+    width: 200px;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    /*border: 1px solid purple;*/
+    background-color: #003865;
+    overflow-x: hidden;
+}
+
+.sidebar a{
+    padding: 20px;
+    color: #8DC8E8;
+    text-decoration: none;
+    display: block;
+}
+
+.sidebar a:hover {
+    background-color: #004C97;
+    color: #8DC8E8;
 }
 
 .input-group {
@@ -45,6 +68,16 @@ form, .content {
     font-size: 16px;
     border-radius: 5px;
     border: 1px solid grey;
+}
+.btn-group button {
+    width: 20%;
+    margin-left: 80px;
+    margin-top: 50px;
+    padding: 30px;
+    color: white;
+    background: #5F9EA0;
+    border: 1px solid purple;
+    float: left;
 }
 .btn {
     padding: 10px;
