@@ -4,41 +4,21 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>User Registration System</title>
+        <title>Module 1 - Phishing</title>
         <link rel="stylesheet" type="text/css" href="style.css">
     </head>
     <body>
         <div class="header">
-            <h2>Home</h2>
+            <h2>Phishing and Social Engineering</h2>
         </div>
         <div class="content">
-            <?php if(isset($_SESSION['success'])): ?>
-            <div class="error success">
-                <h3>
-                    <?php 
-                        echo $_SESSION['success'];
-                        unset($_SESSION['success']);
-                    ?>
-                </h3>
-            </div>
-            <?php endif ?>
-            
             <?php if (isset($_SESSION["username"])): ?>
                 <p>
-                    <b>Welcome to Cyber Security Training 2.0</b>
-                    <br /><br />
-                    This course has four modules: <br /><br />
-                    <li>Phishing and Social Engineering</li>
-                    <li>Patches and Antivirus</li>
-                    <li>Password Strength</li>
-                    <li>Public Wi-Fi Security</li>
-                    <br />
-                    Feel free to take them in any order before the final exam!
+                    Test information here
                 </p>
             <?php else: ?>
                 <p>
-                    Welcome to Cyber Security Training 2.0 <br /><br />
-                    You need to login before accessing the system.
+                    Error to login. Please retry login.
                 </p>
             <?php endif ?>
         </div>

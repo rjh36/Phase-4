@@ -3,26 +3,27 @@
     padding: 0px;
 }
 body {
+    font-family: "Georgia", serif;
     font-size: 120%;
-    background: #9CFBD8;
+    background: white;
 }
 
 .header {
     width: 100%;
     margin: 0px 0px 0px;
-    color: white;
-    background: #5F9EA0;
+    color: black;
+    background: #d8d8d8;
     text-align: left;
-    border: 1px solid purple;
-    border-radius: 10px 10px 0px 0px;
+    border-bottom: 3px solid #004C97;
+    border-top: 3px solid #004C97;
     padding: 20px;
 }
 
 form, .content {
     margin-right: 200px;
-    padding: 20px;
-    border: 1px solid purple;
-    background: white;
+    padding: 50px;
+    /*border: 1px solid #004C97;
+    background: white;*/
     border-radius: 0px 0px 10px 10px;
 }
 
@@ -33,21 +34,21 @@ form, .content {
     z-index: 1;
     top: 0;
     right: 0;
-    border: 1px solid purple;
-    background-color: #111;
+    /*border: 1px solid purple;*/
+    background-color: #003865;
     overflow-x: hidden;
 }
 
-.sidebar a {
+.sidebar a{
     padding: 20px;
-    color: white;
+    color: #8DC8E8;
     text-decoration: none;
     display: block;
 }
 
 .sidebar a:hover {
-    background-color: white;
-    color: black;
+    background-color: #004C97;
+    color: #8DC8E8;
 }
 
 .sidebar button {
@@ -62,6 +63,8 @@ form, .content {
 .sidebar button:hover {
     background-color: green;
     color: white;
+    background-color: #004C97;
+    color: #8DC8E8;
 }
 
 .input-group {
