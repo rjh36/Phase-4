@@ -6,6 +6,7 @@
         <meta charset="UTF-8">
         <title>Module 1 - Phishing</title>
         <link rel="stylesheet" type="text/css" href="style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
     <body>
         <div class="header">
@@ -24,8 +25,12 @@
         </div>
         <div class="sidebar">
             <?php if (isset($_SESSION["username"])): ?>
-                <a><?php echo $_SESSION['username'] ?></a>
-                <a href="index.php?logout='l'" style="color: red;">Logout</a>
+                <button class="dropbtn"><?php echo $_SESSION['username'] ?>
+                        <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                    <a href="index.php?logout='l'" style="color: red;">Logout</a>
+                </div>
                 <a href="index.php">Home</a>
                 <a href="module1.php">Phishing and Social Engineering</a>
                 <a href="#">Patches and Antivirus</a>
@@ -40,3 +45,20 @@
         </div>
     </body>
 </html>
+
+<script>
+    var dropdown = document.getElementsByClassName("dropbtn");
+var i;
+
+for (i = 0; i < dropdown.length; i++) {
+  dropdown[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var dropdownContent = this.nextElementSibling;
+    if (dropdownContent.style.display === "block") {
+      dropdownContent.style.display = "none";
+    } else {
+      dropdownContent.style.display = "block";
+    }
+  });
+}
+</script>

@@ -1,3 +1,5 @@
+
+
 * {
     margin: 0px;
     padding: 0px;
@@ -5,7 +7,7 @@
 body {
     font-family: "Georgia", serif;
     font-size: 120%;
-    background: white;
+    /*background: white;*/
 }
 
 .header {
@@ -34,21 +36,52 @@ form, .content {
     z-index: 1;
     top: 0;
     right: 0;
-    /*border: 1px solid purple;*/
-    background-color: #003865;
     overflow-x: hidden;
+    border: none;
 }
 
-.sidebar a{
+.sidebar a {
     padding: 20px;
     color: #8DC8E8;
     text-decoration: none;
     display: block;
+    background-color: #003865;
+    border: none;
 }
 
-.sidebar a:hover {
+.dropbtn {
+    font-family: "Georgia", serif;
+    font-size: 100%;
+    padding: 20px;
+    color: #8DC8E8;
+    text-decoration: none;
+    display: block;
+    background-color: #003865;
+    border: none;
+    width: 200px;
+    text-align: left;
+}
+
+.sidebar a:hover, .dropbtn:hover {
     background-color: #004C97;
     color: #8DC8E8;
+    border: none;
+}
+
+.dropdown-content {
+    display: none;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    position: absolute;
+    border: none;
+}
+
+.fa-caret-down {
+
+    padding-right: 8px;
+    border: none;
 }
 
 .input-group {
@@ -102,4 +135,15 @@ form, .content {
     background: #DFF0D8;
     border: 1px solid #3C763D;
     margin-bottom: 20px;
+}
+
+.active {
+    background-color: #004C97;
+    color: #8DC8E8;
+    border: none;
+}
+
+@media screen and (max-height: 450px) {
+    .sidebar {padding-top: 15px;}
+    .sidebar a {font-size: 18px;}
 }
