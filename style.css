@@ -67,6 +67,44 @@ form, .content {
     color: #8DC8E8;
 }
 
+.popup-form {
+    display: none;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    border: 3px solid #753bbd;
+    z-index: 2;
+    background-color: white;
+}
+
+.form-box {
+  max-width: 300px;
+  padding: 20px;
+  background-color: white;
+}
+
+.form-box input[type=text] {
+  width: 100%;
+  padding: 20px;
+  margin: 10px;
+  border: 1px solid #00abc8;
+  background: #f1f1f1;
+}
+
+.form-box .btn {
+  background-color: #00abc8;
+  color: white;
+  padding: 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom:10px;
+}
+
+.form-box .cancel {
+    background-color: #e03c31;
+}
+
 .input-group {
     margin: 10px 0px 10px 0px;
 }
