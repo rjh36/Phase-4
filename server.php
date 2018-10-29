@@ -1,4 +1,15 @@
+<?php include('generateCertificate.php'); ?>
+
 <?php
+// New Code, function gets the ID of the user from database and returns it.
+    function getUserID($db, $username) {
+        $query = "SELECT id FROM users WHERE username = '$username'";
+        $result = mysqli_query($db, $query);
+        $result_info = mysqli_fetch_row($result);
+        return $result_info[0];
+    }
+//
+
     session_start();
     $username = "";
     $email = "";
@@ -34,6 +45,11 @@
                         VALUES ('$username', '$email', '$password')";
             mysqli_query($db, $sql);
             $_SESSION['username'] = $username;
+        // New code adds the user's id to the session.
+        // New code also generates a certificate for the user.
+            $_SESSION['id'] = getUserID($db, $username);
+            createAndStoreCertificate($db);
+        //
             $_SESSION['success'] = "You are now logged in";
             header('location: index.php'); //redirect to home page
         }
@@ -55,6 +71,9 @@
             $result = mysqli_query($db, $query);
             if (mysqli_num_rows($result) == 1) {
                 $_SESSION['username'] = $username;
+            // New code adds the user's id to the session.
+                $_SESSION['id'] = getUserID($db, $username);
+            //
                 $_SESSION['success'] = "You are now logged in";
                 header('location: index.php'); //redirect to home page
             }
@@ -67,6 +86,9 @@
     if (isset($_GET['logout'])) {
         session_destroy();
         unset($_SESSION['username']);
+    // New code.
+        unset($_SESSION['id']);
+    //
         header('location: login.php');
     }
 ?>

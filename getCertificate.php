@@ -21,7 +21,7 @@
             <h2>Congratulations, how do you want your certificate?</h2>
         </div>
         <div class="content">
-            <embed src="Templates/CertificateTemplate.pdf" width="100%" height="700px" type='application/pdf'>
+            <embed src=<?php echo'Certificates/'.getFilename($db, $_SESSION['id']) ?> width="100%" height="700px" type='application/pdf'>
         </div>
         <div class="sidebar">
                 <a href="index.php?logout='l'">Logout</a>

@@ -28,8 +28,10 @@ if(isset($_POST['email'])) {
         $mail->Subject = 'Certificate';
 
         $mail->Body = 'Here is my certificate of completion for the cyber security course.';
-
-        $mail->addAttachment('Templates/CertificateTemplate.pdf', 'CertificateTemplate.pdf');
+        
+        $filename = getFilename($db, $_SESSION['id']);
+        
+        $mail->addAttachment('Certificates/'.$filename, $filename);
 
         $mail->send();
     }
