@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?php include('generateCertificate.php'); ?>
 
 <?php
@@ -92,4 +93,3 @@
         header('location: login.php');
     }
 ?>
-

@@ -10,7 +10,7 @@
     </head>
     <body>
         <div class="header">
-            <h2>Phishing and Social Engineering</h2>
+            <h2>Password Strength</h2>
         </div>
         <div class="content">
             <?php if (isset($_SESSION["username"])): ?>

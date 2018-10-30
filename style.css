@@ -1,3 +1,5 @@
+
+
 * {
     margin: 0px;
     padding: 0px;
@@ -5,7 +7,7 @@
 body {
     font-family: "Georgia", serif;
     font-size: 120%;
-    background: white;
+    /*background: white;*/
 }
 
 .header {
@@ -34,19 +36,34 @@ form, .content {
     z-index: 1;
     top: 0;
     right: 0;
-    /*border: 1px solid purple;*/
-    background-color: #003865;
     overflow-x: hidden;
+    border: none;
+    border-left: 2px solid #8DC8E8;
+    background-color: #003865;
+
 }
 
-.sidebar a{
+.sidebar a {
     padding: 20px;
     color: #8DC8E8;
     text-decoration: none;
     display: block;
 }
 
-.sidebar a:hover {
+.dropbtn {
+    font-family: "Georgia", serif;
+    font-size: 100%;
+    padding: 20px;
+    color: #8DC8E8;
+    text-decoration: none;
+    display: block;
+    background-color: #003865;
+    width: 200px;
+    text-align: left;
+    border: none;
+}
+
+.sidebar a:hover, .dropbtn:hover {
     background-color: #004C97;
     color: #8DC8E8;
 }
@@ -105,6 +122,25 @@ form, .content {
     background-color: #e03c31;
 }
 
+.dropdown-content {
+    display: none;
+    background-color: #d8d8d8;;
+    width: 200px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    position: absolute;
+    border: none;
+}
+
+.dropdown-content a:hover {
+    background-color: #8DC8E8;
+}
+
+.fa-caret-down {
+    padding-right: 8px;
+    border: none;
+}
+
 .input-group {
     margin: 10px 0px 10px 0px;
 }
@@ -129,7 +165,7 @@ form, .content {
     margin-top: 50px;
     padding: 30px;
     color: white;
-    background: #5F9EA0;
+    background: #8DC8E8;
     border: 1px solid purple;
     float: left;
 }
@@ -137,9 +173,14 @@ form, .content {
     padding: 10px;
     font-size: 15px;
     color: white;
-    background: #5F9EA0;
+    background-color: #003865;
     border: none;
     border-radius: 5px;
+}
+
+.btn:hover {
+    background-color: #004C97;
+    color: white;
 }
 .error {
     width: 92%;
@@ -156,4 +197,15 @@ form, .content {
     background: #DFF0D8;
     border: 1px solid #3C763D;
     margin-bottom: 20px;
+}
+
+.active {
+    background-color: #004C97;
+    color: #8DC8E8;
+    border: none;
+}
+
+@media screen and (max-height: 450px) {
+    .sidebar {padding-top: 15px;}
+    .sidebar a {font-size: 18px;}
 }
