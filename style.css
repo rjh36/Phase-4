@@ -38,6 +38,9 @@ form, .content {
     right: 0;
     overflow-x: hidden;
     border: none;
+    border-left: 2px solid #8DC8E8;
+    background-color: #003865;
+
 }
 
 .sidebar a {
@@ -45,8 +48,6 @@ form, .content {
     color: #8DC8E8;
     text-decoration: none;
     display: block;
-    background-color: #003865;
-    border: none;
 }
 
 .dropbtn {
@@ -57,29 +58,31 @@ form, .content {
     text-decoration: none;
     display: block;
     background-color: #003865;
-    border: none;
     width: 200px;
     text-align: left;
+    border: none;
 }
 
 .sidebar a:hover, .dropbtn:hover {
     background-color: #004C97;
     color: #8DC8E8;
-    border: none;
 }
 
 .dropdown-content {
     display: none;
-    background-color: #f9f9f9;
-    min-width: 160px;
+    background-color: #d8d8d8;;
+    width: 200px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
     position: absolute;
     border: none;
 }
 
-.fa-caret-down {
+.dropdown-content a:hover {
+    background-color: #8DC8E8;
+}
 
+.fa-caret-down {
     padding-right: 8px;
     border: none;
 }
@@ -108,7 +111,7 @@ form, .content {
     margin-top: 50px;
     padding: 30px;
     color: white;
-    background: #5F9EA0;
+    background: #8DC8E8;
     border: 1px solid purple;
     float: left;
 }
@@ -116,9 +119,14 @@ form, .content {
     padding: 10px;
     font-size: 15px;
     color: white;
-    background: #5F9EA0;
+    background-color: #003865;
     border: none;
     border-radius: 5px;
+}
+
+.btn:hover {
+    background-color: #004C97;
+    color: white;
 }
 .error {
     width: 92%;

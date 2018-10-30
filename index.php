@@ -36,7 +36,7 @@
 
                     Cybercrime is an existing problem with an unforseeable end. Prevention starts with us taking the necessary precautions and protect ourselves by reducing vulnerability.<br /><br />
 
-                    Our Cyber Security Training 2.0 features free, interactive courses that cover concepts in:<br />
+                    Our Basic Online Security Course features free, interactive modules that cover concepts in:<br />
                     <li>Recognizing and thwart phishing attacks or social engineering scams</li>
                     <li>Emphasizing the importance of creating a strong, easy-to-remember password</li>
                     <li>Providing tips on how to protect your device and data while using public Wi-Fi</li>
