@@ -43,7 +43,7 @@ function generateCertificate ($username) {
 // Output Section
     $filename=$username.'Certificate.pdf';
     $root = realpath(str_replace('\\', '/', $_SERVER['DOCUMENT_ROOT']) );
-    $pathToFile=$root.'\CyberSecurity2.0\CyberSecurity2.0\Certificates\\';
+    $pathToFile=$root.'\CyberSecurity2.0\Certificates\\';
     $pdf->Output($pathToFile.$filename,'F');
     return $filename;
 }

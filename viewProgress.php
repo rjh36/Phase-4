@@ -15,7 +15,7 @@
         <div class="content">
             <?php if (isset($_SESSION["username"])): ?>
                 <?php
-                $currentProgress = getProgress($databaseConnection, $id);
+                $currentProgress = getProgress($db, $_SESSION['id']);
                 echo "<ul>";
                 echo "<li>".$currentProgress[1]."</li>";
                 echo "<li>".$currentProgress[2]."</li>";
