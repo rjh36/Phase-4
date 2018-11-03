@@ -1,5 +1,3 @@
-
-
 <?php
 require('fpdf181\fpdf.php');
 // Demonstration version

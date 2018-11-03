@@ -55,10 +55,11 @@
                 </div>
                 <a href="index.php">Home</a>
                 <a href="module1.php">Phishing and Social Engineering</a>
-                <a href="#">Patches and Antivirus</a>
-                <a href="#">Password Strength</a>
-                <a href="#">Public Wi-Fi Security</a>
+                <a href="module2.php">Patches and Antivirus</a>
+                <a href="module3.php">Password Strength</a>
+                <a href="module4.php">Public Wi-Fi Security</a>
                 <a href="#">Take Final Exam</a>
+                <a href="viewProgress.php">View Progress</a>
                 <a href="getCertificate.php">Get Certificate</a>
             <?php else: ?>
                 <a href="register.php">Create Account</a>
