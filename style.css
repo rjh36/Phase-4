@@ -10,6 +10,10 @@ body {
     /*background: white;*/
 }
 
+li {
+    padding-bottom: 40px;
+}
+
 .header {
     width: 100%;
     margin: 0px 0px 0px;

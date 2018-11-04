@@ -17,11 +17,11 @@
                 <?php
                 $currentProgress = getProgress($db, $_SESSION['id']);
                 echo "<ul>";
-                echo "<li>".$currentProgress[1]."</li>";
-                echo "<li>".$currentProgress[2]."</li>";
-                echo "<li>".$currentProgress[3]."</li>";
-                echo "<li>".$currentProgress[4]."</li>";
-                echo "<li>".$currentProgress[5]."</li>";
+                echo "<li><big>Completed Module 1? </big>".boolToString($currentProgress[1])."</li>";
+                echo "<li><big>Completed Module 2? </big>".boolToString($currentProgress[1])."</li>";
+                echo "<li><big>Completed Module 3? </big>".boolToString($currentProgress[1])."</li>";
+                echo "<li><big>Completed Module 4? </big>".boolToString($currentProgress[1])."</li>";
+                echo "<li><big>Completed the Final Exam? </big>".boolToString($currentProgress[1])."</li>";
                 echo "</ul>";
                 ?>
             <?php else: ?>
@@ -44,6 +44,7 @@
                 <a href="module3.php">Password Strength</a>
                 <a href="module4.php">Public Wi-Fi Security</a>
                 <a href="finalexam.php">Take Final Exam</a>
+                <a href="viewProgress.php">View Progress</a>
                 <a href="getCertificate.php">Get Certificate</a>
             <?php else: ?>
                 <a href="register.php">Create Account</a>

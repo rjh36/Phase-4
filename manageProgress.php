@@ -31,3 +31,12 @@ function getFinalReadiness($databaseConnection, $id) {
         return FALSE;
     }
 }
+
+function boolToString($bool) {
+    if($bool) {
+        return "Yes";
+    }
+    else {
+        return "No";
+    }
+}
