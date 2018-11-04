@@ -7,8 +7,9 @@
         <title>User Registration System</title>
         <link rel="stylesheet" type="text/css" href="style.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script type="text/javascript" src='dropdown.js'></script>
     </head>
-    <body>
+    <body onload="dropdown();">
         <div class="header">
             <h2>Welcome to Cyber Security Training 2.0</h2>
         </div>
@@ -68,20 +69,3 @@
         </div>
     </body>
 </html>
-
-<script>
-    var dropdown = document.getElementsByClassName("dropbtn");
-var i;
-
-for (i = 0; i < dropdown.length; i++) {
-  dropdown[i].addEventListener("click", function() {
-    this.classList.toggle("active");
-    var dropdownContent = this.nextElementSibling;
-    if (dropdownContent.style.display === "block") {
-      dropdownContent.style.display = "none";
-    } else {
-      dropdownContent.style.display = "block";
-    }
-  });
-}
-</script>

@@ -6,6 +6,8 @@
         <meta charset="UTF-8">
         <title>Get Certificate</title>
         <link rel="stylesheet" type="text/css" href="style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script type="text/javascript" src='dropdown.js'></script>
         <script type="text/javascript">
             function openForm() {
                 document.getElementById("EmailForm").style.display = "block";
@@ -16,7 +18,7 @@
             }
         </script>
     </head>
-    <body>
+    <body onload="dropdown();">
         <div class="header">
             <h2>Congratulations, how do you want your certificate?</h2>
         </div>
