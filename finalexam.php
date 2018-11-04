@@ -38,6 +38,7 @@
                 <a href="module3.php">Password Strength</a>
                 <a href="module4.php">Public Wi-Fi Security</a>
                 <a href="finalexam.php">Take Final Exam</a>
+                <a href="viewProgress.php">View Progress</a>
                 <a href="getCertificate.php">Get Certificate</a>
             <?php else: ?>
                 <a href="register.php">Create Account</a>
