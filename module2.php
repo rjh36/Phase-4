@@ -8,6 +8,8 @@
         <link rel="stylesheet" type="text/css" href="style.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <script type="text/javascript" src='dropdown.js'></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="pageTurner.js"></script>
     </head>
     <body onload="dropdown();">
         <div class="header">
@@ -15,9 +17,12 @@
         </div>
         <div class="content">
             <?php if (isset($_SESSION["username"])): ?>
-                <p>
-                    Test information here
-                </p>
+                <?php include('module2Contents.php'); ?>
+                
+                <div class="PageTurner">
+                    <button class="btn" id="prev">Previous</button>
+                    <button class="btn" id="next">Next</button>
+                </div>
             <?php else: ?>
                 <p>
                     Error to login. Please retry login.
