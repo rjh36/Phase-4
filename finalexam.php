@@ -15,9 +15,7 @@
         </div>
         <div class="content">
             <?php if (isset($_SESSION["username"])): ?>
-                <p>
-                    Test information here
-                </p>
+                <?php include('finalExamForm.php'); ?>
             <?php else: ?>
                 <p>
                     Error to login. Please retry login.
