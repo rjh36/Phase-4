@@ -21,8 +21,10 @@ if($result == TOTALQUESTIONS) { // Caclulation for passing is done here.
 
 // Displays the results (Passed).
     echo "<div id='result:passed'>You Passed :). Feel free to pick up your certificate!</div>";
+    echo "<a href='index.php'>Home</a> <a href='getCertificate.php'>Get Certificate</a>";
 }
 else {
 // Displays the results (Failed).
     echo "<div id='result:failed'>You Failed :(.</div>";
+    echo "<a href='index.php'>Home</a>";
 }
