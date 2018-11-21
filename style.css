@@ -11,6 +11,10 @@ body {
     /*background: white;*/
 }
 
+li {
+    padding-bottom: 40px;
+}
+
 .header {
     width: 90%;
     color: black;

@@ -1,15 +1,15 @@
 <?php include('server.php'); 
     include('sidebar.inc.php'); ?>
 <!DOCTYPE html>
-
 <html>
     <head>
         <meta charset="UTF-8">
         <title>User Registration System</title>
         <link rel="stylesheet" type="text/css" href="style.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script type="text/javascript" src='dropdown.js'></script>
     </head>
-    <body>
+    <body onload="dropdown();">
         <div class="header">
             <h2>Welcome to Cyber Security Training 2.0</h2>
         </div>

@@ -1,4 +1,5 @@
 <?php include('generateCertificate.php'); ?>
+<?php include('manageProgress.php'); ?>
 
 <?php
 // New Code, function gets the ID of the user from database and returns it.
@@ -46,8 +47,11 @@
             mysqli_query($db, $sql);
             $_SESSION['username'] = $username;
         // New code adds the user's id to the session.
-        // New code also generates a certificate for the user.
+        // New code generates a certificate for the user. (to be changed)
+        // New code also creates a new entry in the course progress table,
+            // in order to keep track of their progress through the course.
             $_SESSION['id'] = getUserID($db, $username);
+            createNewProgress($db, $_SESSION['id']);
             createAndStoreCertificate($db);
         //
             $_SESSION['success'] = "You are now logged in";

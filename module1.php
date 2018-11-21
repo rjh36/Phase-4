@@ -8,7 +8,7 @@
     <head>
         <title>Module 1 - Phishing</title>
     </head>
-    <body>
+    <body onload="dropdown();">
         <div class="header">
             <h2>Phishing and Social Engineering</h2>
         </div>
