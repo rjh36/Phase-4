@@ -1,36 +1,18 @@
+<?php include('server.php'); 
+    include('sidebar.inc.php');
+    include('header.inc.php'); ?>
 <!DOCTYPE html>
-<?php include('server.php'); ?>
 
 <html>
     <head>
-        <meta charset="UTF-8">
         <title>Get Certificate</title>
-        <link rel="stylesheet" type="text/css" href="style.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-        <script type="text/javascript" src='dropdown.js'></script>
+        <script type="text/javascript" src="formHandling.js"></script>
         <script type="text/javascript">
-            function openForm() {
-                document.getElementById("EmailForm").style.display = "block";
-            }
-
-            function closeForm() {
-                document.getElementById("EmailForm").style.display = "none";
-            }
-            
             $(function () {
-                $('.form-box').on('submit', function (e) {
-                    e.preventDefault();
-
-                    $.ajax({
-                        type: 'post',
-                        url: 'email.php',
-                        data: $('.form-box').serialize(),
-                        success: function () {
-                          alert("Your email was sent successfully!");
-                        }
-                    });
-                });
+                <?php if (isset($_SESSION["username"])): ?>
+                    $('.sidebar').append("<button type='button' onmouseup='openForm()'>Email</button>");
+                <?php endif ?>
             });
         </script>
     </head>
@@ -45,28 +27,6 @@
                 <p>
                     Error to login. Please retry login.
                 </p>
-            <?php endif ?>
-        </div>
-        <div class="sidebar">
-            <?php if (isset($_SESSION["username"])): ?>
-                <button class="dropbtn"><?php echo $_SESSION['username'] ?>
-                        <i class="fa fa-caret-down"></i>
-                </button>
-                <div class="dropdown-content">
-                    <a href="index.php?logout='l'" style="color: red;">Logout</a>
-                </div>
-                <a href="index.php">Home</a>
-                <a href="module1.php">Phishing and Social Engineering</a>
-                <a href="module2.php">Patches and Antivirus</a>
-                <a href="module3.php">Password Strength</a>
-                <a href="module4.php">Public Wi-Fi Security</a>
-                <a href="finalexam.php">Take Final Exam</a>
-                <a href="viewProgress.php">View Progress</a>
-                <a href="getCertificate.php">Get Certificate</a>
-                <button type="button" onmouseup="openForm()">Email</button>
-            <?php else: ?>
-                <a href="register.php">Create Account</a>
-                <a href="login.php">Login</a>
             <?php endif ?>
         </div>
         <div class="popup-form" id="EmailForm">
