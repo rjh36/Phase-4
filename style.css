@@ -7,6 +7,7 @@
 body {
     font-family: "Georgia", serif;
     font-size: 120%;
+
     /*background: white;*/
 }
 
@@ -15,8 +16,7 @@ li {
 }
 
 .header {
-    width: 100%;
-    margin: 0px 0px 0px;
+    width: 90%;
     color: black;
     background: #d8d8d8;
     text-align: left;
@@ -26,32 +26,8 @@ li {
 }
 
 form, .content {
-    margin-right: 200px;
+    margin-right: 300px;
     padding: 50px;
-    /*border: 1px solid #004C97;
-    background: white;*/
-    border-radius: 0px 0px 10px 10px;
-}
-
-.sidebar {
-    height: 100%;
-    width: 200px;
-    position: absolute;
-    z-index: 1;
-    top: 0;
-    right: 0;
-    overflow-x: hidden;
-    border: none;
-    border-left: 2px solid #8DC8E8;
-    background-color: #003865;
-
-}
-
-.sidebar a {
-    padding: 20px;
-    color: #8DC8E8;
-    text-decoration: none;
-    display: block;
 }
 
 .dropbtn {
@@ -67,26 +43,7 @@ form, .content {
     border: none;
 }
 
-.sidebar a:hover, .dropbtn:hover {
-    background-color: #004C97;
-    color: #8DC8E8;
-}
 
-.sidebar button {
-    width: 100%;
-    font-size: 20px;
-    padding: 20px;
-    background-color: white;
-    color: black;
-    display: block;
-}
-
-.sidebar button:hover {
-    background-color: green;
-    color: white;
-    background-color: #004C97;
-    color: #8DC8E8;
-}
 
 .popup-form {
     display: none;
