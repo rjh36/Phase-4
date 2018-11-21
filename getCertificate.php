@@ -7,6 +7,7 @@
         <title>Get Certificate</title>
         <link rel="stylesheet" type="text/css" href="style.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
         <script type="text/javascript" src='dropdown.js'></script>
         <script type="text/javascript">
             function openForm() {
@@ -16,6 +17,21 @@
             function closeForm() {
                 document.getElementById("EmailForm").style.display = "none";
             }
+            
+            $(function () {
+                $('.form-box').on('submit', function (e) {
+                    e.preventDefault();
+
+                    $.ajax({
+                        type: 'post',
+                        url: 'email.php',
+                        data: $('.form-box').serialize(),
+                        success: function () {
+                          alert("Your email was sent successfully!");
+                        }
+                    });
+                });
+            });
         </script>
     </head>
     <body onload="dropdown();">
@@ -54,13 +70,14 @@
             <?php endif ?>
         </div>
         <div class="popup-form" id="EmailForm">
-            <form method="post" action="email.php" class="form-box">
+            <!-- method="post" action="email.php" -->
+            <form class="form-box">
                 <h2>Email Certificate</h2>
                 <br/>
                 <label for="email"><b>Recipient's Email</b></label>
                 <input type="text" placeholder="Please enter the recipient's Email!" name="email" required>
                 <br/>
-                <button type="submit" class="btn">Send</button>
+                <button type="submit" class="btn" onclick="closeForm()">Send</button>
                 <button class="btn cancel" onmouseup="closeForm()">Close</button>
             </form>
         </div>
