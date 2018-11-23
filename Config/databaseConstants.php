@@ -4,10 +4,10 @@
  * This file holds the constants needed by the database.
  */
 
-define(HOST, 'localhost');
+define('HOST', 'localhost');
 
-define(USERNAME, 'root');
+define('USERNAME', 'root');
 
-define(PASSWORD, '');
+define('PASSWORD', '');
 
-define(DATABASE, 'registration');
+define('DATABASE', 'registration');
