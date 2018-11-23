@@ -1,5 +1,6 @@
-<?php include('generateCertificate.php'); ?>
-<?php include('manageProgress.php'); ?>
+<?php include('generateCertificate.php');
+     include('manageProgress.php'); 
+     include('Config/databaseConstants.php') ?>
 
 <?php
 // New Code, function gets the ID of the user from database and returns it.
@@ -16,7 +17,7 @@
     $email = "";
     $errors = array();
     //connect to the database
-    $db = mysqli_connect('localhost','root', '', 'registration');
+    $db = mysqli_connect(HOST,USERNAME,PASSWORD,DATABASE);
     
     //if the register button is clicked
     if (isset($_POST['register'])) {
