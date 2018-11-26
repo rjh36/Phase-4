@@ -15,12 +15,12 @@ if(isset($_POST['submit'])) {
         $grade = 0;
         $selected = $_POST['answers'];
         
-        $get_Q_ans_sql = "SELECT * FROM questions";
-        $q_results = mysqli_query($db, $get_Q_ans_sql);
+        $get_correct_ans_sql = "SELECT * FROM answers WHERE correct = TRUE";
+        $c_results = mysqli_query($db, $get_correct_ans_sql);
         
-        while($row = mysqli_fetch_array($q_results)) {
+        while($row = mysqli_fetch_array($c_results)) {
             
-            $checked = $row['correct_answer_id'] == $selected[$i];
+            $checked = $row['answer_id'] == $selected[$i];
             
             if($checked) {
                 $grade++;
