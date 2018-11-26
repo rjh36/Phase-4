@@ -7,7 +7,7 @@
     <head>
         <title>Final Exam</title>
     </head>
-    <body onload="dropdown();">
+    <body>
         <div class="header">
             <h2>Final Exam</h2>
         </div>

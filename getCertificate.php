@@ -16,7 +16,7 @@
             });
         </script>
     </head>
-    <body onload="dropdown();">
+    <body>
         <div class="header">
             <h2>Congratulations, how do you want your certificate?</h2>
         </div>

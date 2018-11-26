@@ -7,7 +7,7 @@
     <head>
         <title>View Progress</title>
     </head>
-    <body onload="dropdown();">
+    <body>
         <div class="header">
             <h2>Here is where you are in the course!</h2>
         </div>

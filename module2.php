@@ -11,7 +11,7 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="pageTurner.js"></script>
     </head>
-    <body onload="dropdown();">
+    <body>
         <div class="header">
             <h2>Patches and Antivirus</h2>
         </div>

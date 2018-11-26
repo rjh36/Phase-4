@@ -7,7 +7,7 @@
     <head>
         <title>User Registration System</title>
     </head>
-    <body onload="dropdown();">
+    <body>
         <div class="header">
             <h2>Welcome to Cyber Security Training 2.0</h2>
         </div>

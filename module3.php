@@ -9,7 +9,7 @@
     <head>
         <title>Module 3 - Password Strength</title>
     </head>
-    <body onload="dropdown();">
+    <body>
         <div class="header">
             <h2>Password Strength</h2>
         </div>

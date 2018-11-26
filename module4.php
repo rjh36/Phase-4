@@ -9,7 +9,7 @@
     <head>
         <title>Module 4 - Public Wi-Fi Security</title>
     </head>
-    <body onload="dropdown();">
+    <body>
         <div class="header">
             <h2>Public Wi-Fi Security</h2>
         </div>
