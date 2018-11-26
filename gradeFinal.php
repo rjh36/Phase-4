@@ -15,8 +15,10 @@ if(isset($_POST['submit'])) {
         $grade = 0;
         $selected = $_POST['answers'];
         
-        $get_correct_ans_sql = "SELECT * FROM answers WHERE correct = TRUE";
-        $c_results = mysqli_query($db, $get_correct_ans_sql);
+        // Queries the database for the correct answers.
+        $correct_A_stmt = $db->prepare("SELECT * FROM answers WHERE correct = TRUE");
+        $correct_A_stmt->execute();
+        $c_results = $correct_A_stmt->get_result();
         
         while($row = mysqli_fetch_array($c_results)) {
             

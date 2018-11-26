@@ -7,24 +7,30 @@ This form composes the final exam.
         <?php 
         // For loop increments over the questions.
         
-        for($i = 1; $i < 5; $i++) {
-        // Get all questions and answers.
-        $get_Q_sql = "SELECT question FROM questions WHERE question_id = '$i'";
-        $q_results = mysqli_query($db, $get_Q_sql);
+        // Sets up the queries for the database.
+        $Q_stmt = $db->prepare("SELECT question FROM questions WHERE question_id = ?");
+        $Q_stmt->bind_param("i", $i);
         
-        while ($q_row = mysqli_fetch_array($q_results)) {
+        $A_stmt = $db->prepare("SELECT * FROM answers WHERE q_id = ?");
+        $A_stmt->bind_param("i", $i);
+        
+        for($i = 1; $i < 5; $i++) {
+        // Get all questions.
+        $Q_stmt->execute();
+        $Q_results = $Q_stmt->get_result();
+        
+        while ($q_row = mysqli_fetch_array($Q_results)) {
         ?>
         
         <li>
             <h4><?php echo $q_row['question']; ?></h4>
         
-        
             <?php 
             // Get all answers for the current question.
-            $get_A_sql = "SELECT * FROM answers WHERE q_id = '$i'";
-            $a_results = mysqli_query($db, $get_A_sql);
+            $A_stmt->execute();
+            $A_results = $A_stmt->get_result();
 
-            while ($a_row = mysqli_fetch_array($a_results)) {
+            while ($a_row = mysqli_fetch_array($A_results)) {
             ?>
         
             <div>
