@@ -3,14 +3,13 @@
      include('Config/databaseConstants.php') ?>
 
 <?php
-// New Code, function gets the ID of the user from database and returns it.
+// Function gets the ID of the user from database and returns it.
     function getUserID($db, $username) {
         $query = "SELECT id FROM users WHERE username = '$username'";
         $result = mysqli_query($db, $query);
         $result_info = mysqli_fetch_row($result);
         return $result_info[0];
     }
-//
 
     session_start();
     $username = "";
@@ -86,14 +85,5 @@
                 array_push($errors, "wrong username/password combination");
             }
         }
-    }
-    //logout
-    if (isset($_GET['logout'])) {
-        session_destroy();
-        unset($_SESSION['username']);
-    // New code.
-        unset($_SESSION['id']);
-    //
-        header('location: login.php');
     }
 ?>

@@ -1,3 +1,11 @@
+<?php 
+    if (isset($_GET['logout'])) {
+        session_destroy();
+        $_SESSION = array();
+        header('location: login.php');
+    }
+?>
+
 <!DOCTYPE html>
 
 <html>
