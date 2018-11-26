@@ -17,6 +17,8 @@
     $errors = array();
     //connect to the database
     $db = mysqli_connect(HOST,USERNAME,PASSWORD,DATABASE);
+    // Sets up interactions with the database.
+    
     
     //if the register button is clicked
     if (isset($_POST['register'])) {
@@ -42,19 +44,22 @@
         //if there are no errors, save user to database
         if (count($errors) == 0) {
             $password = md5($password_1); //encrypt password
-            $sql = "INSERT INTO users (username, email, password)
-                        VALUES ('$username', '$email', '$password')";
-            mysqli_query($db, $sql);
+            
+            $reg_stmt = $db->prepare("INSERT INTO users (username, email, password)
+                        VALUES (?, ?, ?)");
+            $reg_stmt->bind_param("sss", $username, $email, $password);
+            $reg_stmt->execute();
+            
             $_SESSION['username'] = $username;
-        // New code adds the user's id to the session.
-        // New code generates a certificate for the user. (to be changed)
-        // New code also creates a new entry in the course progress table,
-            // in order to keep track of their progress through the course.
+        // Adds the user's id to the session.
             $_SESSION['id'] = getUserID($db, $username);
-            createNewProgress($db, $_SESSION['id']);
-            createAndStoreCertificate($db);
-        //
             $_SESSION['success'] = "You are now logged in";
+            
+        // New entry in the progress table, in order to keep track of progress through the course.
+            createNewProgress($db, $_SESSION['id']);
+        // Generates a certificate for the user. (to be changed)
+            createAndStoreCertificate($db);
+            
             header('location: index.php'); //redirect to home page
         }
     }
@@ -70,14 +75,17 @@
             array_push($errors, "Password is required");
         } 
         if (count($errors) == 0) {
-            $password = md5($password);
-            $query = "SELECT * FROM users WHERE username = '$username' AND password = '$password'";
-            $result = mysqli_query($db, $query);
+            $password = md5($password); // Update encryption method.
+            
+            $log_stmt = $db->prepare("SELECT * FROM users WHERE username = ? AND password = ?");
+            $log_stmt->bind_param("ss", $username, $password);
+            $log_stmt->execute();
+            
+            $result = $log_stmt->get_result();
             if (mysqli_num_rows($result) == 1) {
                 $_SESSION['username'] = $username;
-            // New code adds the user's id to the session.
+            // Adds the user's id to the session.
                 $_SESSION['id'] = getUserID($db, $username);
-            //
                 $_SESSION['success'] = "You are now logged in";
                 header('location: index.php'); //redirect to home page
             }
