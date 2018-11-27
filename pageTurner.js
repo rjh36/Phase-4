@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    $(".pages div").each(function(e) {
+    $(".pages").find("> div").each(function(e) {
         if (e !== 0)
             $(this).hide();
     });

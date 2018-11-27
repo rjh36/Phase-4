@@ -17,7 +17,7 @@
         </div>
         <div class="content">
             <?php if (isset($_SESSION["username"])): ?>
-                <?php include('module2Contents.php'); ?>
+                <?php include('module2withGameTest.html'); ?>
                 
                 <div class="PageTurner">
                     <button class="btn" id="prev">Previous</button>
