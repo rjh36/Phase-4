@@ -1,5 +1,5 @@
 <?php 
-    session_start();
+    include('server.php');
     include('sidebar.inc.php');
     include('header.inc.php');
     include('pagination.inc.php'); ?>
@@ -8,6 +8,8 @@
 <html>
     <head>
         <title>Module 4 - Public Wi-Fi Security</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="pageTurner.js"></script>
     </head>
     <body>
         <div class="header">
@@ -15,9 +17,12 @@
         </div>
         <div class="content">
             <?php if (isset($_SESSION["username"])): ?>
-                <p>
-                    Test information here
-                </p>
+                <?php include('module4Contents.php'); ?>
+                
+                <div class="PageTurner">
+                    <button class="btn" id="prev">Previous</button>
+                    <button class="btn" id="next">Next</button>
+                </div>
             <?php else: ?>
                 <p>
                     Error to login. Please retry login.
