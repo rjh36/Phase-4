@@ -7,13 +7,13 @@
 
 <html>
     <head>
-        <title>Module 2 - Patches and Antivirus</title>
+        <title>Module 2 - Password Strength</title>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="pageTurner.js"></script>
     </head>
     <body>
         <div class="header">
-            <h2>Patches and Antivirus</h2>
+            <h2>Password Strength</h2>
         </div>
         <div class="content">
             <?php if (isset($_SESSION["username"])): ?>

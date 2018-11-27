@@ -7,11 +7,11 @@
 
 <html>
     <head>
-        <title>Module 3 - Password Strength</title>
+        <title>Module 3 - Patches and Antivirus</title>
     </head>
     <body>
         <div class="header">
-            <h2>Password Strength</h2>
+            <h2>Patches and Antivirus</h2>
         </div>
         <div class="content">
             <?php if (isset($_SESSION["username"])): ?>
