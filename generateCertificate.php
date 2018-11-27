@@ -2,7 +2,7 @@
 require('fpdf181\fpdf.php');
 // Demonstration version
 
-function generateCertificate ($username) {
+function generateCertificate($username) {
 // Creation section
     $pdf = new FPDF();
     $pdf->AddPage('L');
@@ -50,16 +50,20 @@ function generateCertificate ($username) {
 
 function storeCertificate($databaseConnection, $filename) {
     $id = $_SESSION['id'];
-    $certificate_store_sql = "INSERT INTO certificates (id, filename)
-                        VALUES ('$id', '$filename')";
-    mysqli_query($databaseConnection, $certificate_store_sql);
+    $C_stmt = $databaseConnection->prepare("INSERT INTO certificates (id, filename)
+                        VALUES (?, ?)");
+    $C_stmt->bind_param("is", $id, $filename);
+    $C_stmt->excecute();
+    mysqli_stmt_close($C_stmt);
 }
 
 function getFilename($databaseConnection, $id) {
-    $filename_query = "SELECT filename FROM certificates WHERE id = '$id'";
-    $result = mysqli_query($databaseConnection, $filename_query);
-    $result_info = mysqli_fetch_row($result);
-    return $result_info[0];
+    $F_stmt = $databaseConnection->prepare("SELECT filename FROM certificates WHERE id = ?");
+    $F_stmt->bind_param("i", $id);
+    $F_stmt->excecute();
+    $F_result = $F_stmt->get_result();
+    $F_info = mysqli_fetch_row($F_result);
+    return $F_info[0];
 }
 
 function createAndStoreCertificate($db) {

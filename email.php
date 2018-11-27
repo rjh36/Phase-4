@@ -11,10 +11,12 @@ require 'C:\xampp\composer\vendor\autoload.php';
 
 //Gets the email of the user.
 function getEmail($databaseConnection, $username) {
-    $email_query = "SELECT email FROM users WHERE username = '$username'";
-    $email_query_result = mysqli_query($databaseConnection, $email_query);
-    $email_query_info = mysqli_fetch_row($email_query_result);
-    return $email_query_info[0];
+    $E_stmt = $databaseConnection->prepare("SELECT email FROM users WHERE username = ?");
+    $E_stmt->bind_param("s", $username);
+    $E_stmt->excecute();
+    $E_results = $E_stmt->get_result();
+    $E_info = mysqli_fetch_row($E_result);
+    return $E_info[0];
 }
 
 if(isset($_POST['email'])) {

@@ -5,10 +5,12 @@
 <?php
 // Function gets the ID of the user from database and returns it.
     function getUserID($db, $username) {
-        $query = "SELECT id FROM users WHERE username = '$username'";
-        $result = mysqli_query($db, $query);
-        $result_info = mysqli_fetch_row($result);
-        return $result_info[0];
+        $ID_stmt = $db->prepare("SELECT id FROM users WHERE username = ?");
+        $ID_stmt->bind_param("s", $username);
+        $ID_stmt->excecute();
+        $ID_result = $ID_stmt->get_result();
+        $ID_info = mysqli_fetch_row($ID_result);
+        return $ID_info[0];
     }
 
     session_start();
