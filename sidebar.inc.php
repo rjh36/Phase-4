@@ -24,6 +24,7 @@
                 <a href="module2.php">Patches and Antivirus</a>
                 <a href="module3.php">Password Strength</a>
                 <a href="module4.php">Public Wi-Fi Security</a>
+                <!-- Lock behind progress through the course. -->
                 <a href="finalExam.php">Take Final Exam</a>
                 <a href="viewProgress.php">View Progress</a>
                 <a href="getCertificate.php">Get Certificate</a>

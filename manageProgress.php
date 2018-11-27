@@ -4,7 +4,7 @@ function createNewProgress($databaseConnection, $id) {
     $NP_stmt = $databaseConnection->prepare("INSERT INTO `course progress`
                         VALUES (?, FALSE, FALSE, FALSE, FALSE, FALSE)");
     $NP_stmt->bind_param("i", $id);
-    $NP_stmt->excecute();
+    $NP_stmt->execute();
     mysqli_stmt_close($NP_stmt);
 }
 
@@ -13,15 +13,15 @@ function updateProgressTrue($databaseConnection, $id, $columnName) {
                         SET ? = TRUE 
                         WHERE id = ?");
     $UP_stmt->bind_param("si", $columnName, $id);
-    $UP_stmt->excecute();
+    $UP_stmt->execute();
     mysqli_stmt_close($UP_stmt);
 }
 
 function getProgress($databaseConnection, $id) {
     $GP_stmt = $databaseConnection->prepare("SELECT * FROM `course progress` WHERE id = ?");
     $GP_stmt->bind_param("i", $id);
-    $GP_stmt->excecute();
-    $GP_result = $GP_stmt->getResult();
+    $GP_stmt->execute();
+    $GP_result = $GP_stmt->get_result();
     $GP_info = mysqli_fetch_row($GP_result);
     return $GP_info;
 }

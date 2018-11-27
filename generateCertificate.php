@@ -53,14 +53,14 @@ function storeCertificate($databaseConnection, $filename) {
     $C_stmt = $databaseConnection->prepare("INSERT INTO certificates (id, filename)
                         VALUES (?, ?)");
     $C_stmt->bind_param("is", $id, $filename);
-    $C_stmt->excecute();
+    $C_stmt->execute();
     mysqli_stmt_close($C_stmt);
 }
 
 function getFilename($databaseConnection, $id) {
     $F_stmt = $databaseConnection->prepare("SELECT filename FROM certificates WHERE id = ?");
     $F_stmt->bind_param("i", $id);
-    $F_stmt->excecute();
+    $F_stmt->execute();
     $F_result = $F_stmt->get_result();
     $F_info = mysqli_fetch_row($F_result);
     return $F_info[0];

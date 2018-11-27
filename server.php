@@ -7,7 +7,7 @@
     function getUserID($db, $username) {
         $ID_stmt = $db->prepare("SELECT id FROM users WHERE username = ?");
         $ID_stmt->bind_param("s", $username);
-        $ID_stmt->excecute();
+        $ID_stmt->execute();
         $ID_result = $ID_stmt->get_result();
         $ID_info = mysqli_fetch_row($ID_result);
         return $ID_info[0];

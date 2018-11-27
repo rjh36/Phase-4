@@ -13,8 +13,8 @@ require 'C:\xampp\composer\vendor\autoload.php';
 function getEmail($databaseConnection, $username) {
     $E_stmt = $databaseConnection->prepare("SELECT email FROM users WHERE username = ?");
     $E_stmt->bind_param("s", $username);
-    $E_stmt->excecute();
-    $E_results = $E_stmt->get_result();
+    $E_stmt->execute();
+    $E_result = $E_stmt->get_result();
     $E_info = mysqli_fetch_row($E_result);
     return $E_info[0];
 }
