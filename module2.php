@@ -1,5 +1,5 @@
 <?php 
-    include('server.php');
+    //include('server.php');
     include('sidebar.inc.php');
     include('header.inc.php');
     include('pagination.inc.php'); ?>
@@ -22,6 +22,11 @@
                 <div class="PageTurner">
                     <button class="btn" id="prev">Previous</button>
                     <button class="btn" id="next">Next</button>
+                </div>
+                <div class="CompleteCourse">
+                    <form action="updateProgress.php" method="post" id="completeModule">
+                        <input type="submit" name="update" value="module2"/>
+                    </form>
                 </div>
             <?php else: ?>
                 <p>

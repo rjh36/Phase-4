@@ -1,5 +1,5 @@
 <?php
-    session_start();
+    //session_start();
     include('sidebar.inc.php');
     include('header.inc.php');
     include('pagination.inc.php'); ?>
@@ -82,6 +82,11 @@
                             <button id="Right"style="bottom: 25px; right: 220px;" class="disPagination">&gt;</button>
                         </div>
                     </p>
+                    <div class="CompleteCourse">
+                        <form action="updateProgress.php" method="post" id="completeModule">
+                            <input type="submit" name="update" value="module1"/>
+                        </form>
+                    </div>
                 </div>
             <?php else: ?>
                 <p>

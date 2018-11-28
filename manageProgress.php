@@ -10,9 +10,9 @@ function createNewProgress($databaseConnection, $id) {
 
 function updateProgressTrue($databaseConnection, $id, $columnName) {
     $UP_stmt = $databaseConnection->prepare("UPDATE `course progress` 
-                        SET ? = TRUE 
+                        SET ".$columnName." = TRUE 
                         WHERE id = ?");
-    $UP_stmt->bind_param("si", $columnName, $id);
+    $UP_stmt->bind_param("i", $id);
     $UP_stmt->execute();
     mysqli_stmt_close($UP_stmt);
 }

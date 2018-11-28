@@ -60,7 +60,7 @@
         // New entry in the progress table, in order to keep track of progress through the course.
             createNewProgress($db, $_SESSION['id']);
         // Generates a certificate for the user. (to be changed)
-            createAndStoreCertificate($db);
+            //createAndStoreCertificate($db);
             
             header('location: index.php'); //redirect to home page
         }

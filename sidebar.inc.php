@@ -1,4 +1,4 @@
-<?php 
+<?php include('server.php');
     if (isset($_GET['logout'])) {
         session_destroy();
         $_SESSION = array();
@@ -25,7 +25,9 @@
                 <a href="module3.php">Password Strength</a>
                 <a href="module4.php">Public Wi-Fi Security</a>
                 <!-- Lock behind progress through the course. -->
+                <?php if (getFinalReadiness($db, $_SESSION["id"])): ?>
                 <a href="finalExam.php">Take Final Exam</a>
+                <?php endif ?>
                 <a href="viewProgress.php">View Progress</a>
                 <a href="getCertificate.php">Get Certificate</a>
             

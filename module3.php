@@ -1,5 +1,5 @@
 <?php 
-    session_start();
+    //session_start();
     include('sidebar.inc.php');
     include('header.inc.php');
     include('pagination.inc.php'); ?>
@@ -18,6 +18,11 @@
                 <p>
                     Test information here
                 </p>
+                <div class="CompleteCourse">
+                    <form action="updateProgress.php" method="post" id="completeModule">
+                        <input type="submit" name="update" value="module3"/>
+                    </form>
+                </div>
             <?php else: ?>
                 <p>
                     Error to login. Please retry login.
