@@ -1,5 +1,6 @@
 <?php
 include('server.php');
+include('generateCertificate.php');
 
 $numFinalQuestions = 4;
 
@@ -33,9 +34,18 @@ if(isset($_POST['submit'])) {
         
         echo "<h3>You answered $grade / $numFinalQuestions correct.</h3>";
         
+    // Pass/Fail calculation to happen here.
+        $pass = $grade == $numFinalQuestions;
+        
     // ToDo: Updates the database if the student passes.
-        /*if() {
+        if($pass) {
             updateProgressTrue($db, $_SESSION['id'], 'final');
-        }*/
+            echo "<h3>You passed!  Feel free to collect your certificate!</h3>";
+        // Generates a certificate for the user. (to be changed)
+            createAndStoreCertificate($db);
+        }
+        else {
+            echo "<h3>You failed!  Please try again!</h3>";
+        }
     }
 }

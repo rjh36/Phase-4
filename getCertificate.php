@@ -1,6 +1,7 @@
 <?php //include('server.php'); 
     include('sidebar.inc.php');
-    include('header.inc.php'); ?>
+    include('header.inc.php');
+    include('generateCertificate.php');?>
 <!DOCTYPE html>
 
 <html>

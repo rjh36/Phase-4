@@ -28,8 +28,7 @@ function getProgress($databaseConnection, $id) {
 
 function getFinalReadiness($databaseConnection, $id) {
     $current_progress = getProgress($databaseConnection, $id);
-    $all_modules_complete = $current_progress[1] and $current_progress[2] and $current_progress[3] and $current_progress[4];
-    
+    $all_modules_complete = $current_progress[1] && $current_progress[2] && $current_progress[3] && $current_progress[4];
     return $all_modules_complete;
 }
 

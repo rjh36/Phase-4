@@ -17,10 +17,10 @@
                 $currentProgress = getProgress($db, $_SESSION['id']);
                 echo "<ul>";
                 echo "<li><big>Completed Module 1? </big>".boolToString($currentProgress[1])."</li>";
-                echo "<li><big>Completed Module 2? </big>".boolToString($currentProgress[1])."</li>";
-                echo "<li><big>Completed Module 3? </big>".boolToString($currentProgress[1])."</li>";
-                echo "<li><big>Completed Module 4? </big>".boolToString($currentProgress[1])."</li>";
-                echo "<li><big>Completed the Final Exam? </big>".boolToString($currentProgress[1])."</li>";
+                echo "<li><big>Completed Module 2? </big>".boolToString($currentProgress[2])."</li>";
+                echo "<li><big>Completed Module 3? </big>".boolToString($currentProgress[3])."</li>";
+                echo "<li><big>Completed Module 4? </big>".boolToString($currentProgress[4])."</li>";
+                echo "<li><big>Completed the Final Exam? </big>".boolToString($currentProgress[5])."</li>";
                 echo "</ul>";
                 ?>
             <?php else: ?>
