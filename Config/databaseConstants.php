@@ -11,3 +11,5 @@ define('USERNAME', 'root');
 define('PASSWORD', '');
 
 define('DATABASE', 'registration');
+
+define('MIN_PASSWORD_LEN', 15);

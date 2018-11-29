@@ -22,7 +22,7 @@
     // Sets up interactions with the database.
     
     
-    //if the register button is clicked
+// Register
     if (isset($_POST['register'])) {
         $username = mysqli_real_escape_string($db, $_POST['username']);
         $email = mysqli_real_escape_string($db, $_POST['email']);
@@ -42,28 +42,40 @@
         if ($password_1 != $password_2) {
             array_push($errors, "Passwords do not match");
         }
+        if ($username === $password_1) {
+            array_push($errors, "Username and Password cannot be the same");
+        }
+        if (strlen($password_1) < MIN_PASSWORD_LEN) {
+            array_push($errors, "Password must be at least 15 characters");
+        }
         
         //if there are no errors, save user to database
         if (count($errors) == 0) {
-            $password = md5($password_1); //encrypt password
-            
+        //encrypt password
+            $password = password_hash($password_1, PASSWORD_DEFAULT);
+
             $reg_stmt = $db->prepare("INSERT INTO users (username, email, password)
                         VALUES (?, ?, ?)");
             $reg_stmt->bind_param("sss", $username, $email, $password);
             $reg_stmt->execute();
-            
-            $_SESSION['username'] = $username;
-        // Adds the user's id to the session.
-            $_SESSION['id'] = getUserID($db, $username);
-            $_SESSION['success'] = "You are now logged in";
-            
-        // New entry in the progress table, in order to keep track of progress through the course.
-            createNewProgress($db, $_SESSION['id']);
-            
-            header('location: index.php'); //redirect to home page
+
+            if($db->errno === 1062) { // Check for uniqueness.
+                array_push($errors, "Username must be unique");
+            }
+            else {
+                $_SESSION['username'] = $username;
+                $_SESSION['id'] = getUserID($db, $username);
+                $_SESSION['success'] = "You are now logged in";
+
+            // New entry in the progress table, in order to track progress through the course.
+                createNewProgress($db, $_SESSION['id']);
+
+                header('location: index.php'); //redirect to home page
+            }
         }
     }
-    //login
+    
+// Login
     if (isset($_POST['login'])) {
         $username = mysqli_real_escape_string($db, $_POST['username']);
         $password = mysqli_real_escape_string($db, $_POST['password']);
@@ -75,16 +87,14 @@
             array_push($errors, "Password is required");
         } 
         if (count($errors) == 0) {
-            $password = md5($password); // Update encryption method.
-            
-            $log_stmt = $db->prepare("SELECT * FROM users WHERE username = ? AND password = ?");
-            $log_stmt->bind_param("ss", $username, $password);
+            $log_stmt = $db->prepare("SELECT * FROM users WHERE username = ?");
+            $log_stmt->bind_param("s", $username);
             $log_stmt->execute();
-            
             $result = $log_stmt->get_result();
-            if (mysqli_num_rows($result) == 1) {
+            $result_info = $result->fetch_assoc();
+            
+            if (password_verify($password, $result_info['password'])) {
                 $_SESSION['username'] = $username;
-            // Adds the user's id to the session.
                 $_SESSION['id'] = getUserID($db, $username);
                 $_SESSION['success'] = "You are now logged in";
                 header('location: index.php'); //redirect to home page
