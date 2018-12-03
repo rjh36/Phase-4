@@ -1,4 +1,4 @@
-<?php //include('server.php'); 
+<?php include('server.php'); 
     include('sidebar.inc.php');
     include('header.inc.php');
     include('generateCertificate.php');?>

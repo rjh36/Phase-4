@@ -1,5 +1,5 @@
 <?php 
-    //include('server.php');
+    session_start();
     include('sidebar.inc.php');
     include('header.inc.php');
     include('pagination.inc.php'); ?>

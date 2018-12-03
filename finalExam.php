@@ -1,4 +1,4 @@
-<?php //include('server.php'); 
+<?php include('server.php'); 
     include('sidebar.inc.php');
     include('header.inc.php'); ?>
 <!DOCTYPE html>
@@ -13,7 +13,13 @@
         </div>
         <div class="content">
             <?php if (isset($_SESSION["username"])): ?>
-                <?php include('finalExamForm.php'); ?>
+                <?php if (getFinalReadiness($db, $_SESSION["id"])): ?>
+                    <?php include('finalExamForm.php'); ?>
+                <?php else: ?>
+                    <p>
+                        You need to complete the rest of the course before the final!
+                    </p>
+                <?php endif ?>
             <?php else: ?>
                 <p>
                     Error to login. Please retry login.

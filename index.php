@@ -1,5 +1,5 @@
 <?php
-    //session_start();
+    session_start();
     include('sidebar.inc.php');
     include('header.inc.php'); ?>
 <!DOCTYPE html>
