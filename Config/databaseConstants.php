@@ -10,6 +10,6 @@ define('USERNAME', 'root');
 
 define('PASSWORD', '');
 
-define('DATABASE', 'registration');
+define('DATABASE', 'cybersec_2');
 
 define('MIN_PASSWORD_LEN', 15);

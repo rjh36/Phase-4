@@ -21,8 +21,8 @@
 
                 <a href="index.php">Home</a>
                 <a href="module1.php">Phishing and Social Engineering</a>
-                <a href="module2.php">Patches and Antivirus</a>
-                <a href="module3.php">Password Strength</a>
+                <a href="module2.php">Password Strength</a>
+                <a href="module3.php">Patches and Antivirus</a>
                 <a href="module4.php">Public Wi-Fi Security</a>
                 <a href="finalExam.php">Take Final Exam</a>
                 <a href="viewProgress.php">View Progress</a>
