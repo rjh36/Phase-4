@@ -132,8 +132,14 @@
         <br>
     </div>
     <div class="9">
-        <h3>Game?</h3>
+        <h3>Game</h3>
         <br>
-        <!-- Game stuff here? -->
+        <!-- Game stuff here -->
+        
+        <div class="CompleteCourse">
+            <form action="updateProgress.php" method="post" id="completeModule">
+                Click this to complete the course: <input type="submit" name="update" value="module3"/>
+            </form>
+        </div>
     </div>
 </div>

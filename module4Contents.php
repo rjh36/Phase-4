@@ -104,4 +104,16 @@
             </li>
         </ul>
     </div>
+    <div class="6">
+        <h3>Game</h3>
+        <!-- Game stuff here -->
+
+        <div class="CompleteCourse">
+            <form action="updateProgress.php" method="post" id="completeModule">
+                Click this to complete the course: <input type="submit" name="update" value="module4"/>
+            </form>
+        </div>
+    </div>
+    
+    
 </div>

@@ -8,6 +8,8 @@
 <html>
     <head>
         <title>Module 3 - Patches and Antivirus</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="pageTurner.js"></script>
     </head>
     <body>
         <div class="header">
@@ -15,13 +17,10 @@
         </div>
         <div class="content">
             <?php if (isset($_SESSION["username"])): ?>
-                <p>
-                    Test information here
-                </p>
-                <div class="CompleteCourse">
-                    <form action="updateProgress.php" method="post" id="completeModule">
-                        <input type="submit" name="update" value="module3"/>
-                    </form>
+                <?php include('module3Contents.php'); ?>
+                <div class="PageTurner">
+                    <button class="btn" id="prev">Previous</button>
+                    <button class="btn" id="next">Next</button>
                 </div>
             <?php else: ?>
                 <p>

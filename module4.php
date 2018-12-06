@@ -18,15 +18,9 @@
         <div class="content">
             <?php if (isset($_SESSION["username"])): ?>
                 <?php include('module4Contents.php'); ?>
-                
                 <div class="PageTurner">
                     <button class="btn" id="prev">Previous</button>
                     <button class="btn" id="next">Next</button>
-                </div>
-                <div class="CompleteCourse">
-                    <form action="updateProgress.php" method="post" id="completeModule">
-                        <input type="submit" name="update" value="module4"/>
-                    </form>
                 </div>
             <?php else: ?>
                 <p>
