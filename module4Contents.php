@@ -1,24 +1,29 @@
 <!DOCTYPE html>
 <div class="pages">
     <div class="1">
-        <h3>Introduction</h3>
+        <h3>Introduction</h3> <br>
         <p>
             &emsp;Wi-Fi hotspots are available almost everywhere we go these days. Sure, 
             they’re convenient when you’re on the go and need to get something done online, 
             but they’re not always safe. In fact, there are many free, use-friendly tools 
             available that enable any wannabe hacker to easily access vulnerable information 
-            floating around your local public wi-fi hotspot.
+            floating around your local public wi-fi hotspot. 
         </p>
+        <br>
         <p>
             &emsp;In this module, we will cover rules and tips to keep you safe when using public wi-fi.
         </p>
+        <br>
     </div>
     <div class="2">
         <h3>A Message from the Federal Trade Commission</h3>
+        <br>
         <iframe src='//players.brightcove.net/1087587715001/Vy0NWmo9x_default/index.html?videoId=2157883693001' allowfullscreen frameborder=0></iframe>
+        <br>
     </div>
     <div class="3">
         <h3>Choosing the Right Wi-Fi Network</h3>
+        <br>
         <p>
             &emsp;As you saw in the video, it is always best to use an encrypted network if 
             that is an option. When that is not an option, you need to make sure that the network 
@@ -26,9 +31,11 @@
             look completely legitimate in order to trick people into using them instead. To avoid 
             this, make sure to ask an employee for the name of the wi-fi network before you log on.
         </p>
+        <br>
     </div>
     <div class="4">
         <h4>VPNs</h4>
+        <br>
         <p>
             &emsp;If you are using a public wi-fi hotspot, then you really can’t be sure the network 
             is encrypted and your information is safe. For this reason, you want to make sure you’re 
@@ -36,21 +43,26 @@
             to have. Additionally, wherever possible, use https instead of http. You can find a browser 
             add-on to help make sure you always follow that rule.
         </p>
+        <br>
         <p>
             &emsp;Additionally, connecting first to a Virtual Private Network (VPN) is a good idea. A VPN 
             encrypts your data and routes it through a private server to your destination and does the same 
             upon return from the site back to your computer. There are many free VPNS available, your company 
             may even have one for you to use, or you can pay for one that may be a little better.
         </p>
+        <br>
     </div>
     <div class="5">
         <h4>Conclusion</h4>
+        <br>
         <p>
             Using a public wi-fi network can put you at risk! 
         </p>
+        <br>
         <p>
             Follow the steps outlined below to help protect yourself:
         </p>
+        <br>
         <ul>
             <li>
                 Make sure you’re on a legit network and not a fake one. Verify the name 
