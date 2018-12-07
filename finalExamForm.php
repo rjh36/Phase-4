@@ -5,6 +5,7 @@ This form composes the final exam.
 <form action="gradeFinal.php" method="post" id="final">
     <ol>
         <?php 
+        $db->set_charset("utf8");
         // For loop increments over the questions.
         
         // Sets up the queries for the database.
