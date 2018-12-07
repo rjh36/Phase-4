@@ -5,10 +5,11 @@
 
 USE cybersec_2;
 
--- Resets the question and answer tables.
+-- Resets the question and answer tables (also handles foreign key).
 TRUNCATE TABLE answers;
+ALTER TABLE answers DROP FOREIGN KEY FK_AssocQuestion;
 TRUNCATE TABLE questions;
-
+ALTER TABLE answers ADD CONSTRAINT FK_AssocQuestion FOREIGN KEY (q_id) REFERENCES questions(question_id);
 
 -- Adds the questions
 -- Module 1: Phishing

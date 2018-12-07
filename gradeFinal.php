@@ -2,7 +2,7 @@
 include('server.php');
 include('generateCertificate.php');
 
-$numFinalQuestions = 4;
+$numFinalQuestions = NUM_FINAL_QUESTIONS;
 
 if(isset($_POST['submit'])) {
     if(!empty($_POST['answers'])) {
@@ -35,7 +35,9 @@ if(isset($_POST['submit'])) {
         echo "<h3>You answered $grade / $numFinalQuestions correct.</h3>";
         
     // Pass/Fail calculation to happen here.
-        $pass = $grade == $numFinalQuestions;
+        $final_grade = ($grade / $numFinalQuestions) * 100;
+        
+        $pass = $final_grade >= 90;
         
     // ToDo: Updates the database if the student passes.
         if($pass) {
@@ -43,9 +45,15 @@ if(isset($_POST['submit'])) {
             echo "<h3>You passed!  Feel free to collect your certificate!</h3>";
         // Generates a certificate for the user. (to be changed)
             createAndStoreCertificate($db);
+            echo "<a href='getCertificate.php'>Get Certificate</a>";
         }
         else {
             echo "<h3>You failed!  Please try again!</h3>";
+            echo "<a href='finalExam.php'>Retake Final Exam</a>";
         }
+    }
+    else {
+        echo "<h3>You failed!  You have to answer at least one question!</h3>";
+        echo "<a href='finalExam.php'>Retake Final Exam</a>";
     }
 }

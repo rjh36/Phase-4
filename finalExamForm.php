@@ -14,7 +14,7 @@ This form composes the final exam.
         $A_stmt = $db->prepare("SELECT * FROM answers WHERE q_id = ?");
         $A_stmt->bind_param("i", $i);
         
-        for($i = 1; $i < 5; $i++) {
+        for($i = 1; $i <= NUM_FINAL_QUESTIONS; $i++) {
         // Get all questions.
         $Q_stmt->execute();
         $Q_results = $Q_stmt->get_result();
