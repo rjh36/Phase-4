@@ -106,20 +106,19 @@
     </div>
     <div class="6">
         <h3>Game</h3>
-            <h3>Game</h3>
-                <script src="UnityCode/PublicWifi/TemplateData/UnityProgress.js"></script>  
-                <script src="UnityCode/PublicWifi/Build/UnityLoader.js"></script>
-                <script>
-                    var gameInstance = UnityLoader.instantiate("gameContainer", "UnityCode/PublicWifi/Build/PublicWifi.json", {onProgress: UnityProgress});
-                </script>
-                <div class="webgl-content">
-                    <div id="gameContainer" style="width: 960px; height: 600px"></div>
-                    <div class="footer">
-                        <div class="webgl-logo"></div>
-                        <div class="fullscreen" onclick="gameInstance.SetFullscreen(1)"></div>
-                        <div class="title">New Unity Project</div>
-                    </div>
+            <script src="UnityCode/PublicWifi/TemplateData/UnityProgress.js"></script>  
+            <script src="UnityCode/PublicWifi/Build/UnityLoader.js"></script>
+            <script>
+                var gameInstance = UnityLoader.instantiate("gameContainer", "UnityCode/PublicWifi/Build/PublicWifi.json", {onProgress: UnityProgress});
+            </script>
+            <div class="webgl-content">
+                <div id="gameContainer" style="width: 960px; height: 600px"></div>
+                <div class="footer">
+                    <div class="webgl-logo"></div>
+                    <div class="fullscreen" onclick="gameInstance.SetFullscreen(1)"></div>
+                    <div class="title">New Unity Project</div>
                 </div>
+            </div>
 
         <div class="CompleteCourse">
             <form action="updateProgress.php" method="post" id="completeModule">
@@ -127,6 +126,4 @@
             </form>
         </div>
     </div>
-    
-    
 </div>
